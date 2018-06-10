@@ -1,5 +1,10 @@
+@import "main-variables";
+
+
 $mainBackground: black;
 $buttonContainerBackground: yellow;
+
+
   #wrapper {
     width: 100%;
     height: 100vh;
@@ -7,8 +12,23 @@ $buttonContainerBackground: yellow;
   }
 
   #button-container {
-    height: 8vh;
+    height: $buttonContainerHeight;
     background: $buttonContainerBackground;
+
+    .material-icons {
+      font-size: $buttonSize;
+
+    }
+
+    .walk-selector {
+      color: $walkColor;
+    }
+    .bike-selector {
+      color: $bikeColor;
+    }
+    .car-selector {
+      color: $carColor;
+    }
   }
 
   app-radar {
