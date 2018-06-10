@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { RadarComponent } from './radar/radar.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RadarComponent
   ],
   imports: [
     BrowserModule
