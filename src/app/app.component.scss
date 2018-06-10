@@ -1,8 +1,17 @@
-$mainWidth: 1110;
-$mainHeight: 1050;
-
 $mainBackground: black;
-
+$buttonContainerBackground: yellow;
   #wrapper {
-    background: $mainBackground
+    width: 100%;
+    height: 100vh;
+    background: $mainBackground;
+  }
+
+  #button-container {
+    height: 8vh;
+    background: $buttonContainerBackground;
+  }
+
+  app-radar {
+    width: 100%;
+    height: 100vh;
   }

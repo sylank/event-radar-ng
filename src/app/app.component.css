@@ -1,0 +1,16 @@
+#wrapper {
+  width: 100%;
+  height: 100vh;
+  background: black;
+}
+
+#button-container {
+  height: 8vh;
+  background: yellow;
+}
+
+app-radar {
+  width: 100%;
+  height: 100vh;
+}
+/*# sourceMappingURL=app.component.css.map */
