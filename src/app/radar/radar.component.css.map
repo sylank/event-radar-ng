@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAEE,AAAA,OAAO,CAAA;EACL,UAAU,EAHK,GAAG;EAIlB,MAAM,EAAE,KAAK;CACd",
-    "sources": [
-        "radar.component.scss"
-    ],
-    "names": [],
-    "file": "radar.component.css"
-}
