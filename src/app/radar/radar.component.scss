@@ -2,5 +2,11 @@ $canvasBackground: red;
 
   #canvas{
     background: $canvasBackground;
-    height: 100vh;
+    height: 91vh;
+    width: 100%;
+  }
+
+  #myCanvas {
+
+    background: steelblue;
   }
