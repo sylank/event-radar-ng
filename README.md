@@ -1,6 +1,6 @@
-![alt text](art/programok.png)
-
 # NgEventRadar
+
+![alt text](art/programok.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
