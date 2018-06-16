@@ -27,15 +27,13 @@ export class RadarComponent implements AfterViewInit {
     const canvas = this.myCanvas;
 
     this.eventRadarCanvas = new EventRadarCanvas(canvas);
-    this.eventColorRuler = new ColorRuler();
-
     this.eventService.getEventData().subscribe(events => {
       console.log(events);
 
       let eventlistr: EventRadarModel[];
       eventlistr = events as EventRadarModel[];
 
-      this.eventRadarManager = new EventRadarManager(this.eventRadarCanvas, eventlistr, this.eventColorRuler);
+      this.eventRadarManager = new EventRadarManager(this.eventRadarCanvas, eventlistr);
 
       this.eventRadarManager.showRadar();
     });
