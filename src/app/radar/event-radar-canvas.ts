@@ -1,6 +1,6 @@
 import { ElementRef } from '@angular/core';
 
-export class EventRadar {
+export class EventRadarCanvas {
   private static CIRCLE_0_RAD = 10;
   private static CIRCLE_0_COLOR = 'black';
 
@@ -32,19 +32,25 @@ export class EventRadar {
 
     console.log('Canvas width: ' + this.canvasWidth);
     console.log('Canvas height: ' + this.canvasHeight);
+
+    this.clearCanvas();
+  }
+
+  clearCanvas() {
+    this.context.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
   }
 
   drawDefaults() {
     this.setDefaults();
 
-    this.drawCenterCircle(EventRadar.CIRCLE_0_RAD, 2, EventRadar.CIRCLE_0_COLOR, true);
+    this.drawCenterCircle(EventRadarCanvas.CIRCLE_0_RAD, 2, EventRadarCanvas.CIRCLE_0_COLOR, true);
 
     this.drawDottedCircle();
-    this.drawCenterCircle(EventRadar.CIRCLE_1_RAD, 2, EventRadar.CIRCLE_1_COLOR, false);
-    this.drawCenterCircle(EventRadar.CIRCLE_2_RAD, 2, EventRadar.CIRCLE_2_COLOR, false);
-    this.drawCenterCircle(EventRadar.CIRCLE_3_RAD, 2, EventRadar.CIRCLE_3_COLOR, false);
-    this.drawCenterCircle(EventRadar.CIRCLE_4_RAD, 2, EventRadar.CIRCLE_4_COLOR, false);
-    this.drawCenterCircle(EventRadar.CIRCLE_5_RAD, 2, EventRadar.CIRCLE_5_COLOR, false);
+    this.drawCenterCircle(EventRadarCanvas.CIRCLE_1_RAD, 2, EventRadarCanvas.CIRCLE_1_COLOR, false);
+    this.drawCenterCircle(EventRadarCanvas.CIRCLE_2_RAD, 2, EventRadarCanvas.CIRCLE_2_COLOR, false);
+    this.drawCenterCircle(EventRadarCanvas.CIRCLE_3_RAD, 2, EventRadarCanvas.CIRCLE_3_COLOR, false);
+    this.drawCenterCircle(EventRadarCanvas.CIRCLE_4_RAD, 2, EventRadarCanvas.CIRCLE_4_COLOR, false);
+    this.drawCenterCircle(EventRadarCanvas.CIRCLE_5_RAD, 2, EventRadarCanvas.CIRCLE_5_COLOR, false);
 
     this.setDefaults();
   }
@@ -56,7 +62,7 @@ export class EventRadar {
     this.drawDestinationLine(angle, distance, 2, color);
 
     this.setDefaults();
-    this.drawCenterCircle(EventRadar.CIRCLE_0_RAD, 2, EventRadar.CIRCLE_0_COLOR, true);
+    this.drawCenterCircle(EventRadarCanvas.CIRCLE_0_RAD, 2, EventRadarCanvas.CIRCLE_0_COLOR, true);
     this.setDefaults();
   }
 

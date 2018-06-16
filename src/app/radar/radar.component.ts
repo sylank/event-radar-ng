@@ -1,4 +1,4 @@
-import { EventRadar } from './event-radar';
+import { EventRadarCanvas } from './event-radar-canvas';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AfterViewInit } from '@angular/core';
 
@@ -12,26 +12,26 @@ export class RadarComponent implements AfterViewInit {
 
   private context: CanvasRenderingContext2D;
 
-  private eventRadar: EventRadar;
+  private EventRadarCanvas: EventRadarCanvas;
 
   constructor() { }
 
   ngAfterViewInit() {
     const canvas = this.myCanvas;
 
-    this.eventRadar = new EventRadar(canvas);
+    this.EventRadarCanvas = new EventRadarCanvas(canvas);
 
     this.initCanvas();
   }
 
   initCanvas() {
-    this.eventRadar.drawDefaults();
+    this.EventRadarCanvas.drawDefaults();
 
-    this.eventRadar.addEvent(10, 50, 'yellow');
-    this.eventRadar.addEvent(20, 100, 'black');
-    this.eventRadar.addEvent(30, 200, 'red');
-    this.eventRadar.addEvent(40, 300, 'black');
-    this.eventRadar.addEvent(50, 400, 'black');
+    this.EventRadarCanvas.addEvent(10, 50, 'yellow');
+    this.EventRadarCanvas.addEvent(20, 100, 'black');
+    this.EventRadarCanvas.addEvent(30, 200, 'red');
+    this.EventRadarCanvas.addEvent(40, 300, 'black');
+    this.EventRadarCanvas.addEvent(50, 400, 'black');
   }
 
 }
