@@ -1,6 +1,10 @@
-import { EventRadar } from './event-radar';
+import { EventRadarModel } from './model/event-radar-model';
+import { ColorRuler } from './rule/color-ruler';
+import { EventService } from './service/event.service';
+import { EventRadarCanvas } from './event-radar-canvas';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AfterViewInit } from '@angular/core';
+import { EventRadarManager } from './event-radar-manager';
 
 @Component({
   selector: 'app-radar',
@@ -8,30 +12,32 @@ import { AfterViewInit } from '@angular/core';
   styleUrls: ['./radar.component.scss']
 })
 export class RadarComponent implements AfterViewInit {
-  @ViewChild('myCanvas') myCanvas;
 
   private context: CanvasRenderingContext2D;
 
-  private eventRadar: EventRadar;
+  private eventRadarCanvas: EventRadarCanvas;
+  private eventRadarManager: EventRadarManager;
+  private eventColorRuler: ColorRuler;
 
-  constructor() { }
+  @ViewChild('myCanvas') myCanvas;
+
+  constructor(private eventService: EventService) { }
 
   ngAfterViewInit() {
     const canvas = this.myCanvas;
 
-    this.eventRadar = new EventRadar(canvas);
+    this.eventRadarCanvas = new EventRadarCanvas(canvas);
+    this.eventService.getEventData().subscribe(events => {
+      console.log(events);
 
-    this.initCanvas();
-  }
+      let eventlistr: EventRadarModel[];
+      eventlistr = events as EventRadarModel[];
 
-  initCanvas() {
-    this.eventRadar.drawDefaults();
+      this.eventRadarManager = new EventRadarManager(this.eventRadarCanvas, eventlistr);
 
-    this.eventRadar.addEvent(10, 50, 'black');
-    this.eventRadar.addEvent(20, 100, 'black');
-    this.eventRadar.addEvent(30, 200, 'black');
-    this.eventRadar.addEvent(40, 300, 'black');
-    this.eventRadar.addEvent(50, 400, 'black');
+      this.eventRadarManager.showRadar();
+    });
+
   }
 
 }

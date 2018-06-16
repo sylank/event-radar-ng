@@ -1,6 +1,26 @@
 import { ElementRef } from '@angular/core';
 
-export class EventRadar {
+export class EventRadarCanvas {
+  private static LINE_END_CIRCLE_RAD = 10;
+
+  private static CIRCLE_0_RAD = 10;
+  private static CIRCLE_0_COLOR = 'black';
+
+  private static CIRCLE_1_RAD = 60;
+  private static CIRCLE_1_COLOR = 'black';
+
+  private static CIRCLE_2_RAD = 110;
+  private static CIRCLE_2_COLOR = 'black';
+
+  private static CIRCLE_3_RAD = 160;
+  private static CIRCLE_3_COLOR = 'black';
+
+  private static CIRCLE_4_RAD = 210;
+  private static CIRCLE_4_COLOR = 'black';
+
+  private static CIRCLE_5_RAD = 300;
+  private static CIRCLE_5_COLOR = 'black';
+
   private context: CanvasRenderingContext2D;
 
   private canvasWidth;
@@ -14,19 +34,25 @@ export class EventRadar {
 
     console.log('Canvas width: ' + this.canvasWidth);
     console.log('Canvas height: ' + this.canvasHeight);
+
+    this.clearCanvas();
+  }
+
+  clearCanvas() {
+    this.context.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
   }
 
   drawDefaults() {
     this.setDefaults();
 
-    this.drawCenterCircle(10, 2, 'black', true);
+    this.drawCenterCircle(EventRadarCanvas.CIRCLE_0_RAD, 2, EventRadarCanvas.CIRCLE_0_COLOR, true);
 
     this.drawDottedCircle();
-    this.drawCenterCircle(60, 2, 'black', false);
-    this.drawCenterCircle(110, 2, 'black', false);
-    this.drawCenterCircle(160, 2, 'black', false);
-    this.drawCenterCircle(210, 2, 'black', false);
-    this.drawCenterCircle(300, 2, 'black', false);
+    this.drawCenterCircle(EventRadarCanvas.CIRCLE_1_RAD, 2, EventRadarCanvas.CIRCLE_1_COLOR, false);
+    this.drawCenterCircle(EventRadarCanvas.CIRCLE_2_RAD, 2, EventRadarCanvas.CIRCLE_2_COLOR, false);
+    this.drawCenterCircle(EventRadarCanvas.CIRCLE_3_RAD, 2, EventRadarCanvas.CIRCLE_3_COLOR, false);
+    this.drawCenterCircle(EventRadarCanvas.CIRCLE_4_RAD, 2, EventRadarCanvas.CIRCLE_4_COLOR, false);
+    this.drawCenterCircle(EventRadarCanvas.CIRCLE_5_RAD, 2, EventRadarCanvas.CIRCLE_5_COLOR, false);
 
     this.setDefaults();
   }
@@ -36,16 +62,23 @@ export class EventRadar {
 
     console.log('Event added: %d %d %s', angle, distance, color);
     this.drawDestinationLine(angle, distance, 2, color);
+
+    this.setDefaults();
+    this.drawCenterCircle(EventRadarCanvas.CIRCLE_0_RAD, 0, EventRadarCanvas.CIRCLE_0_COLOR, true);
+    this.setDefaults();
   }
 
   setDefaults() {
     this.context.lineWidth = 1;
     this.context.setLineDash([]);
+    this.context.strokeStyle = '#000';
+    this.context.fillStyle = '#000';
   }
 
   drawLine(fromX: number, fromY: number, toX: number, toY: number, lineWidth: number, color: string) {
     this.context.beginPath();
     this.context.lineWidth = lineWidth;
+    this.context.strokeStyle = color;
 
     this.context.setLineDash([]);
     this.context.moveTo(fromX, fromY);
@@ -84,7 +117,7 @@ export class EventRadar {
     const toPoints: [number, number] = this.calculateDestination(angle, length, [this.canvasWidth / 2, this.canvasHeight / 2]);
 
     this.drawLine(this.canvasWidth / 2, this.canvasHeight / 2, toPoints[0], toPoints[1], lineWidth, color);
-    this.drawCircle(toPoints[0], toPoints[1], 10, 1, color, true);
+    this.drawCircle(toPoints[0], toPoints[1], EventRadarCanvas.LINE_END_CIRCLE_RAD, 1, color, true);
   }
 
   calculateDestination(gammaRad: number, c: number, cPoint: [number, number]): [number, number] {
@@ -114,19 +147,19 @@ export class EventRadar {
 
     let verticalDirection = 1;
     let horizontalDirection = 1;
-    if (gammaRad < 90 && gammaRad > 0) {
+    if (gammaRad <= 90 && gammaRad >= 0) {
       horizontalDirection = 1;
       verticalDirection = -1;
     }
-    if (gammaRad < 180 && gammaRad > 90) {
+    if (gammaRad <= 180 && gammaRad >= 90) {
       horizontalDirection = 1;
       verticalDirection = 1;
     }
-    if (gammaRad < 270 && gammaRad > 180) {
+    if (gammaRad <= 270 && gammaRad >= 180) {
       horizontalDirection = -1;
       verticalDirection = 1;
     }
-    if (gammaRad < 360 && gammaRad > 270) {
+    if (gammaRad <= 360 && gammaRad >= 270) {
       horizontalDirection = -1;
       verticalDirection = -1;
     }
@@ -139,16 +172,16 @@ export class EventRadar {
 
   private claculateBeta(gamma: number): number {
     let setAngle = 90;
-    if (gamma < 90 && gamma > 0) {
+    if (gamma <= 90 && gamma >= 0) {
       setAngle = 90;
     }
-    if (gamma < 180 && gamma > 90) {
+    if (gamma <= 180 && gamma >= 90) {
       setAngle = 180;
     }
-    if (gamma < 270 && gamma > 180) {
+    if (gamma <= 270 && gamma >= 180) {
       setAngle = 270;
     }
-    if (gamma < 360 && gamma > 270) {
+    if (gamma <= 360 && gamma >= 270) {
       setAngle = 360;
     }
 
