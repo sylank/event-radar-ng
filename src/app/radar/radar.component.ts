@@ -26,6 +26,12 @@ export class RadarComponent implements AfterViewInit {
 
   initCanvas() {
     this.eventRadar.drawDefaults();
+
+    this.eventRadar.addEvent(10, 50, 'black');
+    this.eventRadar.addEvent(20, 100, 'black');
+    this.eventRadar.addEvent(30, 200, 'black');
+    this.eventRadar.addEvent(40, 300, 'black');
+    this.eventRadar.addEvent(50, 400, 'black');
   }
 
 }
