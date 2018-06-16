@@ -1,6 +1,8 @@
 import { ElementRef } from '@angular/core';
 
 export class EventRadarCanvas {
+  private static LINE_END_CIRCLE_RAD = 10;
+
   private static CIRCLE_0_RAD = 10;
   private static CIRCLE_0_COLOR = 'black';
 
@@ -62,7 +64,7 @@ export class EventRadarCanvas {
     this.drawDestinationLine(angle, distance, 2, color);
 
     this.setDefaults();
-    this.drawCenterCircle(EventRadarCanvas.CIRCLE_0_RAD, 2, EventRadarCanvas.CIRCLE_0_COLOR, true);
+    this.drawCenterCircle(EventRadarCanvas.CIRCLE_0_RAD, 0, EventRadarCanvas.CIRCLE_0_COLOR, true);
     this.setDefaults();
   }
 
@@ -115,7 +117,7 @@ export class EventRadarCanvas {
     const toPoints: [number, number] = this.calculateDestination(angle, length, [this.canvasWidth / 2, this.canvasHeight / 2]);
 
     this.drawLine(this.canvasWidth / 2, this.canvasHeight / 2, toPoints[0], toPoints[1], lineWidth, color);
-    this.drawCircle(toPoints[0], toPoints[1], 10, 1, color, true);
+    this.drawCircle(toPoints[0], toPoints[1], EventRadarCanvas.LINE_END_CIRCLE_RAD, 1, color, true);
   }
 
   calculateDestination(gammaRad: number, c: number, cPoint: [number, number]): [number, number] {
