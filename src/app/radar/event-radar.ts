@@ -1,6 +1,24 @@
 import { ElementRef } from '@angular/core';
 
 export class EventRadar {
+  private static CIRCLE_0_RAD = 10;
+  private static CIRCLE_0_COLOR = 'black';
+
+  private static CIRCLE_1_RAD = 60;
+  private static CIRCLE_1_COLOR = 'black';
+
+  private static CIRCLE_2_RAD = 110;
+  private static CIRCLE_2_COLOR = 'black';
+
+  private static CIRCLE_3_RAD = 160;
+  private static CIRCLE_3_COLOR = 'black';
+
+  private static CIRCLE_4_RAD = 210;
+  private static CIRCLE_4_COLOR = 'black';
+
+  private static CIRCLE_5_RAD = 300;
+  private static CIRCLE_5_COLOR = 'black';
+
   private context: CanvasRenderingContext2D;
 
   private canvasWidth;
@@ -19,14 +37,14 @@ export class EventRadar {
   drawDefaults() {
     this.setDefaults();
 
-    this.drawCenterCircle(10, 2, 'black', true);
+    this.drawCenterCircle(EventRadar.CIRCLE_0_RAD, 2, EventRadar.CIRCLE_0_COLOR, true);
 
     this.drawDottedCircle();
-    this.drawCenterCircle(60, 2, 'black', false);
-    this.drawCenterCircle(110, 2, 'black', false);
-    this.drawCenterCircle(160, 2, 'black', false);
-    this.drawCenterCircle(210, 2, 'black', false);
-    this.drawCenterCircle(300, 2, 'black', false);
+    this.drawCenterCircle(EventRadar.CIRCLE_1_RAD, 2, EventRadar.CIRCLE_1_COLOR, false);
+    this.drawCenterCircle(EventRadar.CIRCLE_2_RAD, 2, EventRadar.CIRCLE_2_COLOR, false);
+    this.drawCenterCircle(EventRadar.CIRCLE_3_RAD, 2, EventRadar.CIRCLE_3_COLOR, false);
+    this.drawCenterCircle(EventRadar.CIRCLE_4_RAD, 2, EventRadar.CIRCLE_4_COLOR, false);
+    this.drawCenterCircle(EventRadar.CIRCLE_5_RAD, 2, EventRadar.CIRCLE_5_COLOR, false);
 
     this.setDefaults();
   }
@@ -36,6 +54,10 @@ export class EventRadar {
 
     console.log('Event added: %d %d %s', angle, distance, color);
     this.drawDestinationLine(angle, distance, 2, color);
+
+    this.setDefaults();
+    this.drawCenterCircle(EventRadar.CIRCLE_0_RAD, 2, EventRadar.CIRCLE_0_COLOR, true);
+    this.setDefaults();
   }
 
   setDefaults() {
@@ -46,6 +68,7 @@ export class EventRadar {
   drawLine(fromX: number, fromY: number, toX: number, toY: number, lineWidth: number, color: string) {
     this.context.beginPath();
     this.context.lineWidth = lineWidth;
+    this.context.strokeStyle = color;
 
     this.context.setLineDash([]);
     this.context.moveTo(fromX, fromY);
