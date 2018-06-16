@@ -8,7 +8,7 @@ export class EventRadarModel extends EventModel {
     eventDistance: number,
     description: string,
     angle: number,
-    color: string = '') {
+    color: string = '#000') {
     super(eventName, eventDistance, description, angle);
 
     this.color = color;

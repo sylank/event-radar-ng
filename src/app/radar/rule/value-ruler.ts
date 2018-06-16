@@ -11,7 +11,7 @@ export class ValueRuler implements Ruler<EventRadarModel[]> {
     });
 
     events.forEach(element => {
-      element.value = (element.eventDistance / max) * 450;
+      element.value = (element.eventDistance / max) * 390;
     });
 
     return events;

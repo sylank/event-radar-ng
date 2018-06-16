@@ -20,9 +20,11 @@ export class EventRadarManager {
   showRadar() {
     this.eventRadarCanvas.drawDefaults();
 
-    console.log(this.events);
+
     this.events = this.colorRuler.evaluate(this.events);
     this.events = this.valueRuler.evaluate(this.events);
+
+    console.log(this.events);
 
     this.events.forEach(element => {
       this.eventRadarCanvas.addEvent(element.angle, element.value, element.color);
