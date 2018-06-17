@@ -1,7 +1,18 @@
-<div id="canvas">
-  <canvas id="myCanvas" #myCanvas width="800" height="800">
-  </canvas>
-  <div *ngFor="let element of elements | async">
-    <app-event-name title={{element.eventName}} [ngStyle]="{'left':getLeft(element.angle, element.eventDistance), 'top':getTop(element.angle, element.eventDistance), 'position':'absolute'}"></app-event-name>
+<div id="layer-wrapper">
+  <div id="background-layer">
+    <app-background-circle text="50 km" num=5>
+      <app-background-circle text="40 km">
+        <app-background-circle text="30 km">
+          <app-background-circle text="20 km">
+            <app-background-circle text="10 km">
+
+            </app-background-circle>
+          </app-background-circle>
+        </app-background-circle>
+      </app-background-circle>
+    </app-background-circle>
+  </div>
+  <div id="line-layer">
+
   </div>
 </div>

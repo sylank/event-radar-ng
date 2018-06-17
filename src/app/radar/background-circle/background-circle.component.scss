@@ -1,0 +1,40 @@
+.outer {
+    position:relative;
+    left: 0px;
+    top: 0px;
+    height:100%;
+    width: 100%;
+    background-color: black;
+    border-radius:50%;
+    display: inline-block;
+}
+.inner {
+    position:relative;
+    left: 0.5%;
+    top: 0.5%;
+
+    height: 99%;
+    width: 99%;
+    background-color: #fff;
+    border-radius:50%;
+    display: inline-block;
+}
+
+.container {
+    position:absolute;
+    left: 15%;
+    top: 15%;
+
+    height: 70%;
+    width: 70%;
+    background-color: #fff;
+    border-radius:50%;
+    display: inline-block;
+}
+
+.circle-text {
+  position:absolute;
+  width: 20%;
+  left: 10px;
+  top: 50%;
+}

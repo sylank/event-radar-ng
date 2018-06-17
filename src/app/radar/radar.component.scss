@@ -1,13 +1,22 @@
-$canvasBackground: red;
 
-  #canvas{
+#layer-wrapper {
+  position: relative;
+	width:100vh;
+  height:100vh;
+
+  background: silver;
+
+  #background-layer {
     position: relative;
-    background: $canvasBackground;
-    height: 91vh;
-    width: 100%;
+    width:100vh;
+    height:100vh;
+    z-index: 50;
   }
 
-  #myCanvas {
+  #line-layer {
     position: relative;
-    background: silver;
+    width:100vh;
+    height:100vh;
+    z-index: 100;
   }
+}

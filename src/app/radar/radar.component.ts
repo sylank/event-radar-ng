@@ -23,26 +23,26 @@ export class RadarComponent implements AfterViewInit {
 
   public elements: Observable<EventModel[]>;
 
-  @ViewChild('myCanvas') myCanvas;
+  // @ViewChild('myCanvas') myCanvas;
 
   constructor(private eventService: EventService) { }
 
   ngAfterViewInit() {
-    const canvas = this.myCanvas;
+    /* const canvas = this.myCanvas;
 
-    this.eventRadarCanvas = new EventRadarCanvas(canvas);
-    this.eventService.getEventData().subscribe(events => {
-      console.log(events);
+     this.eventRadarCanvas = new EventRadarCanvas(canvas);
+     this.eventService.getEventData().subscribe(events => {
+       console.log(events);
 
-      let eventlistr: EventRadarModel[];
-      eventlistr = events as EventRadarModel[];
+       let eventlistr: EventRadarModel[];
+       eventlistr = events as EventRadarModel[];
 
-      this.eventRadarManager = new EventRadarManager(this.eventRadarCanvas, eventlistr);
+       this.eventRadarManager = new EventRadarManager(this.eventRadarCanvas, eventlistr);
 
-      this.eventRadarManager.showRadar();
-    });
+       this.eventRadarManager.showRadar();
+     });
 
-    this.elements = this.eventService.getEventData();
+     this.elements = this.eventService.getEventData();*/
   }
 
   getLeft(angle: number, distance: number): string {
