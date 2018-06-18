@@ -7,14 +7,16 @@
   background: silver;
 
   #background-layer {
-    position: relative;
+    position: absolute;
     width:100vh;
     height:100vh;
     z-index: 50;
   }
 
-  #line-layer {
-    position: relative;
+  #vector-manager {
+    top: 0px;
+    left: 0px;
+    position: absolute;
     width:100vh;
     height:100vh;
     z-index: 100;
