@@ -1,3 +1,6 @@
+import { EventRadarModel } from './../model/event-radar-model';
+import { Observable } from 'rxjs/Observable';
+import { EventModel } from './../model/event-model';
 import { EventService } from './../service/event.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,23 +11,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VectorManagerComponent implements OnInit {
 
-  mockData: { name: string, angle: number, distance: number }[] = [
-    { 'name': '0', 'angle': 0, 'distance': 50 },
-    { 'name': '0', 'angle': 15, 'distance': 50 },
-    { 'name': '0', 'angle': 25, 'distance': 50 },
-    { 'name': '0', 'angle': 45, 'distance': 50 },
-    { 'name': '1', 'angle': 90, 'distance': 25 },
-    { 'name': '1', 'angle': 105, 'distance': 25 },
-    { 'name': '1', 'angle': 115, 'distance': 25 },
-    { 'name': '1', 'angle': 135, 'distance': 25 },
-    { 'name': '2', 'angle': 180, 'distance': 50 },
-    { 'name': '3', 'angle': 270, 'distance': 50 }
-  ];
+  public destinations: Promise<boolean>;
+  public dests: Array<EventModel>;
 
   constructor(private eventService: EventService) { }
 
   ngOnInit() {
-    console.log(this.mockData);
+    this.eventService.getEventData().subscribe(
+      (element) => {
+        this.dests = element;
+
+
+        console.log(this.dests);
+
+        const max = this.getMax(this.dests);
+
+        this.dests.forEach(e => {
+          e.eventDistance = (e.eventDistance / max) * 50;
+        });
+
+        console.log(this.dests);
+
+        this.destinations = Promise.resolve(true);
+      }
+    );
+
   }
 
   getRotation(angle: number) {
@@ -35,4 +46,14 @@ export class VectorManagerComponent implements OnInit {
     return length + '%';
   }
 
+  public getMax(elements: EventModel[]): number {
+    let max = -1;
+    elements.forEach(element => {
+      if (element.eventDistance > max) {
+        max = element.eventDistance;
+      }
+    });
+
+    return max;
+  }
 }
