@@ -1,4 +1,4 @@
-import { MathUtils } from './../math-utils';
+import { EventService } from './../service/event.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -21,7 +21,7 @@ export class VectorManagerComponent implements OnInit {
     { 'name': '3', 'angle': 270, 'distance': 50 }
   ];
 
-  constructor() { }
+  constructor(private eventService: EventService) { }
 
   ngOnInit() {
     console.log(this.mockData);
@@ -33,23 +33,6 @@ export class VectorManagerComponent implements OnInit {
 
   getLength(length: number) {
     return length + '%';
-  }
-
-  getTransformOrigin(angle: number) {
-    /*if (angle <= 90 && angle >= 0) {
-      return 'top left';
-    }
-    if (angle <= 180 && angle >= 90) {
-      return 'top left';
-    }
-    if (angle <= 270 && angle >= 180) {
-      return 'top left';
-    }
-    if (angle <= 360 && angle >= 270) {
-      return 'top left';
-    }*/
-
-    return '0px 15px';
   }
 
 }
