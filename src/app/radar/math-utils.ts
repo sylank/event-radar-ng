@@ -1,6 +1,17 @@
-import { EventRadarModel } from './model/event-radar-model';
 import { EventModel } from './model/event-model';
+
 export class MathUtils {
+
+  public static calculateTriangle(gammaRad: number, c: number, cPoint: [number, number]): [number, number, number] {
+    const beta = this.claculateBeta(gammaRad);
+    const alpha = 180 - 90 - beta;
+
+    const a = Math.sin(this.toRadians(alpha)) * c;
+    const b = Math.cos(this.toRadians(alpha)) * c;
+
+    return [a, b, c];
+  }
+
   public static calculateDestination(gammaRad: number, c: number, cPoint: [number, number]): [number, number] {
     switch (gammaRad) {
       case 90: {
@@ -20,11 +31,7 @@ export class MathUtils {
       }
     }
 
-    const beta = this.claculateBeta(gammaRad);
-    const alpha = 180 - 90 - beta;
-
-    const a = Math.sin(this.toRadians(alpha)) * c;
-    const b = Math.cos(this.toRadians(alpha)) * c;
+    const toPoints: [number, number, number] = this.calculateTriangle(gammaRad, c, cPoint);
 
     let verticalDirection = 1;
     let horizontalDirection = 1;
@@ -45,10 +52,14 @@ export class MathUtils {
       verticalDirection = -1;
     }
 
-    const xA = cPoint[0] + (horizontalDirection * a);
-    const yA = cPoint[1] + (verticalDirection * b);
+    const xA = cPoint[0] + (horizontalDirection * toPoints[0]);
+    const yA = cPoint[1] + (verticalDirection * toPoints[1]);
 
     return [xA, yA];
+  }
+
+  public static calculateSource(gammaRad: number, c: number, cPoint: [number, number]): [number, number] {
+    return [0, 0];
   }
 
   public static claculateBeta(gamma: number): number {

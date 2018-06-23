@@ -1,5 +1,5 @@
-<div id="line-layer">
-  <app-radar-vector id="proba">
+<div id="line-layer" *ngFor="let data of mockData">
+  <app-radar-vector id="proba" [ngStyle]="{ 'width': getLength(data.distance), 'transform': getRotation(data.angle), 'transform-origin': getTransformOrigin()}">
 
   </app-radar-vector>
 </div>
