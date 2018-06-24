@@ -1,12 +1,13 @@
 $canvasBackground: red;
 
   #canvas{
+    position: relative;
     background: $canvasBackground;
     height: 91vh;
     width: 100%;
   }
 
   #myCanvas {
-
-    background: steelblue;
+    position: relative;
+    background: silver;
   }

@@ -6,12 +6,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RadarComponent } from './radar/radar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EventNameComponent } from './radar/event-name/event-name.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    RadarComponent
+    RadarComponent,
+    EventNameComponent
   ],
   imports: [
     BrowserModule,

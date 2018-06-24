@@ -1,3 +1,7 @@
 <div id="canvas">
-  <canvas id="myCanvas" #myCanvas width="800" height="800" style="background:lightgray;"></canvas>
+  <canvas id="myCanvas" #myCanvas width="800" height="800">
+  </canvas>
+  <div *ngFor="let element of elements | async">
+    <app-event-name title={{element.eventName}} [ngStyle]="{'left':getLeft(element.angle, element.eventDistance), 'top':getTop(element.angle, element.eventDistance), 'position':'absolute'}"></app-event-name>
+  </div>
 </div>

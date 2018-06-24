@@ -1,3 +1,4 @@
+import { EventModel } from './model/event-model';
 import { EventRadarModel } from './model/event-radar-model';
 import { ColorRuler } from './rule/color-ruler';
 import { EventService } from './service/event.service';
@@ -5,6 +6,8 @@ import { EventRadarCanvas } from './event-radar-canvas';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AfterViewInit } from '@angular/core';
 import { EventRadarManager } from './event-radar-manager';
+import { Observable } from 'rxjs/Observable';
+import { MathUtils } from './math-utils';
 
 @Component({
   selector: 'app-radar',
@@ -17,7 +20,8 @@ export class RadarComponent implements AfterViewInit {
 
   private eventRadarCanvas: EventRadarCanvas;
   private eventRadarManager: EventRadarManager;
-  private eventColorRuler: ColorRuler;
+
+  public elements: Observable<EventModel[]>;
 
   @ViewChild('myCanvas') myCanvas;
 
@@ -38,6 +42,14 @@ export class RadarComponent implements AfterViewInit {
       this.eventRadarManager.showRadar();
     });
 
+    this.elements = this.eventService.getEventData();
   }
 
+  getLeft(angle: number, distance: number): string {
+    return (MathUtils.calculateDestination(angle, (distance / 80) * 390, [400, 400])[0] + 10) + 'px';
+  }
+
+  getTop(angle: number, distance: number): string {
+    return (MathUtils.calculateDestination(angle, (distance / 80) * 390, [400, 400])[1] - 15) + 'px';
+  }
 }
