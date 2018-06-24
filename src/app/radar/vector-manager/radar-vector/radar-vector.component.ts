@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-radar-vector',
@@ -11,5 +11,4 @@ export class RadarVectorComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

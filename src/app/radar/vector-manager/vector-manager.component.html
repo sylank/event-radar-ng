@@ -1,6 +1,6 @@
 <div *ngIf="destinations | async">
   <div id="line-layer" *ngFor="let data of dests">
-    <app-radar-vector id="proba" [ngStyle]="{ 'width': getLength(data.eventDistance), 'transform': getRotation(data.angle), 'transform-origin': '0px 15px'}">
+    <app-radar-vector id="proba" (color)='data.color' [ngStyle]="{'background':data.color,'overflow': visible, 'width': getLength(data.eventDistance), 'transform': getRotation(data.angle), 'transform-origin': '0px 15px'}">
 
     </app-radar-vector>
   </div>

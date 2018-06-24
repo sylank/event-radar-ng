@@ -12,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class VectorManagerComponent implements OnInit {
 
   public destinations: Promise<boolean>;
-  public dests: Array<EventModel>;
+  public dests: Array<EventRadarModel>;
 
   constructor(private eventService: EventService) { }
 
@@ -23,6 +23,24 @@ export class VectorManagerComponent implements OnInit {
 
 
         console.log(this.dests);
+
+        this.dests.forEach(e => {
+          if (e.eventDistance >= 0 && e.eventDistance <= 10) {
+            // walk
+            e.color = '#669AD4';
+          }
+
+          if (e.eventDistance >= 10 && e.eventDistance <= 25) {
+            // bike
+            e.color = '#F9DD3E';
+          }
+
+          if (e.eventDistance >= 25) {
+            // car
+            e.color = '#1D8A99';
+          }
+
+        });
 
         const max = this.getMax(this.dests);
 

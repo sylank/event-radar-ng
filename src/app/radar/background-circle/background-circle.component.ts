@@ -9,7 +9,6 @@ export class BackgroundCircleComponent implements OnInit {
   @Input()
   public text: string;
 
-
   constructor() { }
 
   ngOnInit() {
