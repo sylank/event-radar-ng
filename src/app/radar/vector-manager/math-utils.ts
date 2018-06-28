@@ -26,49 +26,29 @@ export class MathUtils {
     const a = Math.sin(this.toRadians(alpha)) * c;
     const b = Math.cos(this.toRadians(alpha)) * c;
 
-    const A: [number, number] = [0, 0];
+    let verticalDirection = 1;
+    let horizontalDirection = 1;
     if (gamma <= 90 && gamma >= 0) {
-      A[0] = cPoint[0] + a;
-      A[1] = cPoint[1] - b;
+      horizontalDirection = 1;
+      verticalDirection = -1;
     }
     if (gamma <= 180 && gamma >= 90) {
-      A[0] = cPoint[0] + a;
-      A[1] = cPoint[1] + b;
+      horizontalDirection = 1;
+      verticalDirection = 1;
     }
     if (gamma <= 270 && gamma >= 180) {
-      A[0] = cPoint[0] - a;
-      A[1] = cPoint[1] + b;
+      horizontalDirection = -1;
+      verticalDirection = 1;
     }
     if (gamma <= 360 && gamma >= 270) {
-      A[0] = cPoint[0] - a;
-      A[1] = cPoint[1] - b;
+      horizontalDirection = -1;
+      verticalDirection = -1;
     }
-    /*
-        let verticalDirection = 1;
-        let horizontalDirection = 1;
-        if (gamma <= 90 && gamma >= 0) {
-          horizontalDirection = 1;
-          verticalDirection = -1;
-        }
-        if (gamma <= 180 && gamma >= 90) {
-          horizontalDirection = 1;
-          verticalDirection = 1;
-        }
-        if (gamma <= 270 && gamma >= 180) {
-          horizontalDirection = -1;
-          verticalDirection = 1;
-        }
-        if (gamma <= 360 && gamma >= 270) {
-          horizontalDirection = -1;
-          verticalDirection = -1;
-        }
 
-        const xA = cPoint[0] + (horizontalDirection * a);
-        const yA = cPoint[1] + (verticalDirection * b);
+    const xA = cPoint[0] + (horizontalDirection * a);
+    const yA = cPoint[1] + (verticalDirection * b);
 
-        return [xA, yA];*/
-
-    return A;
+    return [xA, yA];
   }
 
   public static claculateBeta(gamma: number): number {

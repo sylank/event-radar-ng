@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BackgroundCircleComponent } from './radar/background-circle/background-circle.component';
 import { RadarVectorComponent } from './radar/vector-manager/radar-vector/radar-vector.component';
 import { VectorManagerComponent } from './radar/vector-manager/vector-manager.component';
+import { RadarCaptionComponent } from './radar/vector-manager/radar-caption/radar-caption.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { VectorManagerComponent } from './radar/vector-manager/vector-manager.co
     RadarComponent,
     BackgroundCircleComponent,
     RadarVectorComponent,
-    VectorManagerComponent
+    VectorManagerComponent,
+    RadarCaptionComponent
   ],
   imports: [
     BrowserModule,

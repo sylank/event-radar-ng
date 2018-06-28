@@ -1,7 +1,5 @@
 import { MathUtils } from './math-utils';
 import { EventRadarModel } from './../model/event-radar-model';
-import { Observable } from 'rxjs/Observable';
-import { EventModel } from './../model/event-model';
 import { EventService } from './../service/event.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -43,12 +41,6 @@ export class VectorManagerComponent implements OnInit {
 
         });
 
-        const max = this.getMax(this.dests);
-
-        this.dests.forEach(e => {
-          e.eventDistance = (e.eventDistance / max) * 50;
-        });
-
         console.log(this.dests);
 
         this.destinations = Promise.resolve(true);
@@ -63,17 +55,6 @@ export class VectorManagerComponent implements OnInit {
 
   getLength(length: number) {
     return length + 'vh';
-  }
-
-  public getMax(elements: EventModel[]): number {
-    let max = -1;
-    elements.forEach(element => {
-      if (element.eventDistance > max) {
-        max = element.eventDistance;
-      }
-    });
-
-    return max;
   }
 
   getTopByCoords(gammaRad: number, c: number) {
