@@ -1,14 +1,50 @@
 [
   {
-    "eventName": "Elso",
-    "eventDistance": 5,
+    "eventName": "Keszthely - Babamúzeum",
+    "eventDistance": 25,
     "description": "elso esemeny",
-    "angle": 50
+    "angle": 25
   },
   {
-    "eventName": "Masodik",
-    "eventDistance": 15,
+    "eventName": "Balatonboglár - BB napok",
+    "eventDistance": 50,
     "description": "elso esemeny",
-    "angle": 91
+    "angle": 120
+  },
+  {
+    "eventName": "Balatonújlak - Kukorica csárda",
+    "eventDistance": 8,
+    "description": "elso esemeny",
+    "angle": 170
+  },
+  {
+    "eventName": "Hévíz - Tófürdő",
+    "eventDistance": 30,
+    "description": "elso esemeny",
+    "angle": 300
+  },
+  {
+    "eventName": "Balatonfelvidéki Nemzeti Park",
+    "eventDistance": 30,
+    "description": "elso esemeny",
+    "angle": 280
+  },
+  {
+    "eventName": "Marcali - Christinus borház",
+    "eventDistance": 10,
+    "description": "elso esemeny",
+    "angle": 200
+  },
+  {
+    "eventName": "Badacsony",
+    "eventDistance": 50,
+    "description": "elso esemeny",
+    "angle": 0
+  },
+  {
+    "eventName": "Fenékpuszta - Római kori romok",
+    "eventDistance": 10,
+    "description": "elso esemeny",
+    "angle": 270
   }
 ]

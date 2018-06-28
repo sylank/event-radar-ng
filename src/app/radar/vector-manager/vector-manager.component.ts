@@ -41,12 +41,6 @@ export class VectorManagerComponent implements OnInit {
 
         });
 
-        const max = MathUtils.getMax(this.dests);
-
-        this.dests.forEach(e => {
-          e.eventDistance = (e.eventDistance / max) * 50;
-        });
-
         console.log(this.dests);
 
         this.destinations = Promise.resolve(true);
