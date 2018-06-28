@@ -6,7 +6,7 @@
   </div>
   <div id="caption-layer" *ngFor="let data of dests">
     <div class="caption1" [ngStyle]="{ 'top': getTopByCoords(data.angle, data.eventDistance), 'left': getLeftByCoords(data.angle, data.eventDistance) }">
-      {{data.eventName}}
+      <app-radar-caption [caption]="data.eventName"></app-radar-caption>
     </div>
   </div>
 </div>
