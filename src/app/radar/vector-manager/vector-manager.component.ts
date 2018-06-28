@@ -1,3 +1,4 @@
+import { MathUtils } from './math-utils';
 import { EventRadarModel } from './../model/event-radar-model';
 import { Observable } from 'rxjs/Observable';
 import { EventModel } from './../model/event-model';
@@ -61,7 +62,7 @@ export class VectorManagerComponent implements OnInit {
   }
 
   getLength(length: number) {
-    return length + '%';
+    return length + 'vh';
   }
 
   public getMax(elements: EventModel[]): number {
@@ -73,5 +74,13 @@ export class VectorManagerComponent implements OnInit {
     });
 
     return max;
+  }
+
+  getTopByCoords(gammaRad: number, c: number) {
+    return MathUtils.calculateDestination(gammaRad, c, [50, 50])[1] + 'vh';
+  }
+
+  getLeftByCoords(gammaRad: number, c: number) {
+    return MathUtils.calculateDestination(gammaRad, c, [50, 50])[0] + 'vh';
   }
 }

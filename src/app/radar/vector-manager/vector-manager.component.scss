@@ -6,7 +6,20 @@
   height:100vh;
   z-index: 100;
 }
+#caption-layer{
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  width:100vh;
+  height:100vh;
+  z-index: 101;
+}
 
+.caption1{
+  top: 50vh;
+  left: 50vh;
+  position: absolute;
+}
 
 #proba {
   position: absolute;
