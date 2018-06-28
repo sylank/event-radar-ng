@@ -1,0 +1,31 @@
+#line-layer {
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  width:100vh;
+  height:100vh;
+  z-index: 100;
+}
+#caption-layer{
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  width:100vh;
+  height:100vh;
+  z-index: 101;
+}
+
+.caption1{
+  top: 50vh;
+  left: 50vh;
+  position: absolute;
+}
+
+#proba {
+  position: absolute;
+  //width: 500px;
+  top: 48.5vh;//460.5px;
+  left:50vh;//474.5px;
+  //transform-origin: top left;
+  //transform: rotate(45deg);
+}
