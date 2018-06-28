@@ -3,42 +3,12 @@
     "eventName": "Elso",
     "eventDistance": 5,
     "description": "elso esemeny",
-    "angle": 0
+    "angle": 50
   },
   {
     "eventName": "Masodik",
     "eventDistance": 15,
     "description": "elso esemeny",
-    "angle": 90
-  },
-  {
-    "eventName": "Harmadik",
-    "eventDistance": 80,
-    "description": "elso esemeny",
-    "angle": 125
-  },
-  {
-    "eventName": "Negyedik",
-    "eventDistance": 20,
-    "description": "elso esemeny",
-    "angle": 80
-  },
-  {
-    "eventName": "Otodik",
-    "eventDistance": 50,
-    "description": "elso esemeny",
-    "angle": 278
-  },
-  {
-    "eventName": "Hatodik",
-    "eventDistance": 12,
-    "description": "elso esemeny",
-    "angle": 55
-  },
-  {
-    "eventName": "Hetedik",
-    "eventDistance": 25,
-    "description": "elso esemeny",
-    "angle": 170
+    "angle": 91
   }
 ]

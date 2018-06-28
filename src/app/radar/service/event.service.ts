@@ -1,3 +1,4 @@
+import { EventRadarModel } from './../model/event-radar-model';
 import { EventModel } from './../model/event-model';
 
 import { Injectable } from '@angular/core';
@@ -9,6 +10,6 @@ export class EventService {
   constructor(private http: HttpClient) { }
 
   public getEventData() {
-    return this.http.get<EventModel[]>('assets/event/events.json');
+    return this.http.get<EventRadarModel[]>('assets/event/events.json');
   }
 }

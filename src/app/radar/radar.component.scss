@@ -1,13 +1,24 @@
-$canvasBackground: red;
 
-  #canvas{
-    position: relative;
-    background: $canvasBackground;
-    height: 91vh;
-    width: 100%;
+#layer-wrapper {
+  position: relative;
+	width:100vw;
+  height:100vh;
+
+  background: silver;
+
+  #background-layer {
+    position: absolute;
+    width:100vh;
+    height:100vh;
+    z-index: 50;
   }
 
-  #myCanvas {
-    position: relative;
-    background: silver;
+  #vector-manager {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width:100vh;
+    height:100vh;
+    z-index: 100;
   }
+}
