@@ -1,10 +1,12 @@
+@import "../../main-variables";
+
 #line-layer {
   top: 0px;
   left: 0px;
   position: absolute;
   width:100vh;
   height:100vh;
-  z-index: 20;
+  z-index: $vectorLayer;
 }
 #captions{
   top: 0px;
@@ -12,7 +14,7 @@
   position: absolute;
   width:100vh;
   height:100vh;
-  z-index: 101;
+  z-index: $captionLayer;
 }
 
 .caption-layer{

@@ -6,6 +6,7 @@ $buttonContainerBackground: yellow;
     width: 100%;
     height: 100vh;
     background: $lavender;
+    z-index: $baseLayer;
   }
 
   #button-container {
