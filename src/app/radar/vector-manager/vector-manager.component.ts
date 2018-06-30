@@ -49,15 +49,7 @@ export class VectorManagerComponent implements OnInit {
 
   }
 
-  getRotation(angle: number) {
-    return 'rotate(' + (angle - 90) + 'deg)';
-  }
-
-  getLength(length: number) {
-    return length + 'vh';
-  }
-
-  generateStyle(angle, distance): any {
+  generateCaptionStyle(angle, distance): any {
     const choords = MathUtils.calculateDestination(angle, distance, [50, 50]);
 
     const style = {
@@ -68,6 +60,18 @@ export class VectorManagerComponent implements OnInit {
     if (angle > 180) {
       style['margin-left'] = '20px';
     }
+
+    return style;
+  }
+
+  generateVectorStyle(color, distance, angle) {
+    const style = {
+      'background': color,
+      'overflow': 'visible',
+      'width': distance + 'vh',
+      'transform': 'rotate(' + (angle - 90) + 'deg)',
+      'transform-origin': '0px 15px'
+    };
 
     return style;
   }
