@@ -1,29 +1,28 @@
 # NgEventRadar
 
-![alt text](art/programok.png)
+![alt text](art/radar.png)
+(actual design)
+
+## Description
+
+Here you can find an Angular 5 visual component. This component looks like a diagram or a chart but here you can show nearby events. You can configure it with a JSON file.
+We have a summer house and i want to create a fancy website. I will use this radar diagram to show the nearby static events like a spa or a park or a mountain hike program.
+
+Here you can see the diagram in action (this is a mock design, this is not real webpage):
+![alt text](art/plan.png)
+
+## Installation
+
+You can find the component in NPM registry. you can easily download and re use it. Please follow the installation guideline down below.
+
+
+
+## Customization
+
+# Fork
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
