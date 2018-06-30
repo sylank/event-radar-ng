@@ -1,7 +1,10 @@
-# NgEventRadar
+# EventRadar
+
+Demo URL: -in progress
+  
+Example website: -in progress
 
 ![alt text](art/radar.png)
-(actual design)
 
 ## Description
 
@@ -15,11 +18,23 @@ Here you can see the diagram in action (this is a mock design, this is not real 
 
 You can find the component in NPM registry. you can easily download and re use it. Please follow the installation guideline down below.
 
+__Npm registry__
 
+__Insert into your project__
 
 ## Customization
 
-# Fork
+You can customise data, diagram scale and colors as well.
+
+__Colors__
+
+__Diagram scale__
+
+__Data__
+
+## Fork
+
+Feel free to fork it but please create a merge request if you create improvements, refactors or if you have a good feature implementation.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
