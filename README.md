@@ -8,7 +8,7 @@ Example website: -in progress
 
 ## Description
 
-Here you can find an Angular 5 visual component. This component looks like a diagram or a chart but here you can show nearby events. You can configure it with a JSON file.
+Here you can find an Angular 5 visual component. This component looks like a diagram or a chart but here you can show nearby events. You can configure it with a Json file.
 We have a summer house and i want to create a fancy website. I will use this radar diagram to show the nearby static events like a spa or a park or a mountain hike program.
 
 Here you can see the diagram in action (this is a mock design, this is not real webpage):
@@ -16,7 +16,7 @@ Here you can see the diagram in action (this is a mock design, this is not real 
 
 ## Installation
 
-You can find the component in NPM registry. you can easily download and re use it. Please follow the installation guideline down below.
+You can find the component in NPM registry. You can easily download and re use it. Please follow the installation guideline down below.
 
 __Npm registry__
 
@@ -24,7 +24,7 @@ __Insert into your project__
 
 ## Customization
 
-You can customise data, diagram scale and colors as well.
+You are able to customise data, diagram scale and colors as well.
 
 __Colors__
 
