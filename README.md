@@ -20,7 +20,15 @@ You can find the component in NPM registry. You can easily download and re use i
 
 __Npm registry__
 
+Step inside your project dir:
+`cd <your_project_dir>`
+
+Install the EventRadar from npm repository:
+`npm i ng-event-radar`
+
 __Insert into your project__
+
+`npm i ng-event-radar`
 
 ## Customization
 
