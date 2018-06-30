@@ -1,18 +1,17 @@
+@import "../main-variables";
 
 #layer-wrapper {
   position: relative;
 	width:100vh;
   height:100vh;
-
-  background: silver;
-  //z-index: 0;
 }
 
 #background-layer {
   position: absolute;
   width:100vh;
   height:100vh;
-  //z-index: 49;
+
+  z-index: $circleLayer;
 }
 
 #vector-manager {
@@ -21,7 +20,6 @@
   position: absolute;
   width:100vh;
   height:100vh;
-  //z-index: 50;
 }
 
 .closing {
@@ -31,10 +29,10 @@
 
   height: 5%;
   width: 5%;
-  background-color: #000;
+  background-color: $white;
   border-radius:50%;
   display: block;
-  z-index: 55;
+  z-index: $closingLayer;
 
   animation: 2s ease-out 0s 1 textFadeIn;
 }

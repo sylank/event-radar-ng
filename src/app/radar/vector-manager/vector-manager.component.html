@@ -1,11 +1,11 @@
 <div *ngIf="destinations | async">
   <div id="line-layer" *ngFor="let data of dests">
-    <app-radar-vector id="vector-layer" (color)='data.color' [ngStyle]="{'background':data.color,'overflow': visible, 'width': getLength(data.eventDistance), 'transform': getRotation(data.angle), 'transform-origin': '0px 15px'}">
+    <app-radar-vector id="vector-layer" (color)='data.color' [ngStyle]="generateVectorStyle(data.color, data.eventDistance, data.angle)">
 
     </app-radar-vector>
   </div>
   <div id="captions">
-    <div class="caption-layer" *ngFor="let data of dests" [ngStyle]="generateStyle(data.angle, data.eventDistance)">
+    <div class="caption-layer" *ngFor="let data of dests" [ngStyle]="generateCaptionStyle(data.angle, data.eventDistance)">
       <app-radar-caption [caption]="data.eventName"></app-radar-caption>
     </div>
   </div>

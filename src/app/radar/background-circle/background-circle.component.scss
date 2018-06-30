@@ -1,10 +1,12 @@
+@import "../../main-variables";
+
 .outer {
     position:relative;
     left: 0px;
     top: 0px;
     height:100%;
     width: 100%;
-    background-color: black;
+    background-color: $white;
     border-radius:50%;
     display: inline-block;
 
@@ -17,7 +19,7 @@
 
     height: 99%;
     width: 99%;
-    background-color: #fff;
+    background-color: $lavender;
     border-radius:50%;
     display: inline-block;
 }
@@ -29,7 +31,7 @@
 
     height: 70%;
     width: 70%;
-    background-color: #fff;
+    background-color: $lavender;
     border-radius:50%;
     display: inline-block;
 }
@@ -39,6 +41,7 @@
   width: 20%;
   left: 5px;
   top: 50%;
+  color: $white;
 
   animation: 2s ease-out 0s 1 textFadeIn;
 }
