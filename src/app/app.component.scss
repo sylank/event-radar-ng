@@ -1,23 +1,21 @@
 @import "main-variables";
 
-
-$mainBackground: black;
 $buttonContainerBackground: yellow;
 
-
-  #wrapper {
+  #radar-wrapper {
     width: 100%;
     height: 100vh;
-    background: $mainBackground;
+    background: $lavender;
+    z-index: $baseLayer;
   }
 
   #button-container {
     height: $buttonContainerHeight;
     background: $buttonContainerBackground;
+    display: none;
 
     .material-icons {
       font-size: $buttonSize;
-
     }
 
     .walk-selector {
@@ -29,9 +27,4 @@ $buttonContainerBackground: yellow;
     .car-selector {
       color: $carColor;
     }
-  }
-
-  app-radar {
-    width: 100%;
-    height: 92vh;
   }

@@ -1,24 +1,40 @@
+@import "../main-variables";
 
 #layer-wrapper {
   position: relative;
-	width:100vw;
+	width:100vh;
+  height:100vh;
+}
+
+#background-layer {
+  position: absolute;
+  width:100vh;
   height:100vh;
 
-  background: silver;
-
-  #background-layer {
-    position: absolute;
-    width:100vh;
-    height:100vh;
-    z-index: 50;
-  }
-
-  #vector-manager {
-    top: 0px;
-    left: 0px;
-    position: absolute;
-    width:100vh;
-    height:100vh;
-    z-index: 100;
-  }
+  z-index: $circleLayer;
 }
+
+#vector-manager {
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  width:100vh;
+  height:100vh;
+}
+
+.closing {
+  position: relative;
+  left: 47.5%;
+  top: 47.5%;
+
+  height: 5%;
+  width: 5%;
+  background-color: $white;
+  border-radius:50%;
+  display: block;
+  z-index: $closingLayer;
+
+  animation: 2s ease-out 0s 1 textFadeIn;
+}
+
+

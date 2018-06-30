@@ -1,7 +1,5 @@
 import { MathUtils } from './math-utils';
 import { EventRadarModel } from './../model/event-radar-model';
-import { Observable } from 'rxjs/Observable';
-import { EventModel } from './../model/event-model';
 import { EventService } from './../service/event.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -43,12 +41,6 @@ export class VectorManagerComponent implements OnInit {
 
         });
 
-        const max = this.getMax(this.dests);
-
-        this.dests.forEach(e => {
-          e.eventDistance = (e.eventDistance / max) * 50;
-        });
-
         console.log(this.dests);
 
         this.destinations = Promise.resolve(true);
@@ -57,30 +49,30 @@ export class VectorManagerComponent implements OnInit {
 
   }
 
-  getRotation(angle: number) {
-    return 'rotate(' + (angle - 90) + 'deg)';
+  generateCaptionStyle(angle, distance): any {
+    const choords = MathUtils.calculateDestination(angle, distance, [50, 50]);
+
+    const style = {
+      'top': choords[1] + 'vh',
+      'left': choords[0] + 'vh'
+    };
+
+    if (angle > 180) {
+      style['margin-left'] = '20px';
+    }
+
+    return style;
   }
 
-  getLength(length: number) {
-    return length + 'vh';
-  }
+  generateVectorStyle(color, distance, angle) {
+    const style = {
+      'background': color,
+      'overflow': 'visible',
+      'width': distance + 'vh',
+      'transform': 'rotate(' + (angle - 90) + 'deg)',
+      'transform-origin': '0px 15px'
+    };
 
-  public getMax(elements: EventModel[]): number {
-    let max = -1;
-    elements.forEach(element => {
-      if (element.eventDistance > max) {
-        max = element.eventDistance;
-      }
-    });
-
-    return max;
-  }
-
-  getTopByCoords(gammaRad: number, c: number) {
-    return MathUtils.calculateDestination(gammaRad, c, [50, 50])[1] + 'vh';
-  }
-
-  getLeftByCoords(gammaRad: number, c: number) {
-    return MathUtils.calculateDestination(gammaRad, c, [50, 50])[0] + 'vh';
+    return style;
   }
 }
