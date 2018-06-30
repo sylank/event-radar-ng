@@ -57,11 +57,18 @@ export class VectorManagerComponent implements OnInit {
     return length + 'vh';
   }
 
-  getTopByCoords(gammaRad: number, c: number) {
-    return MathUtils.calculateDestination(gammaRad, c, [50, 50])[1] + 'vh';
-  }
+  generateStyle(angle, distance): any {
+    const choords = MathUtils.calculateDestination(angle, distance, [50, 50]);
 
-  getLeftByCoords(gammaRad: number, c: number) {
-    return MathUtils.calculateDestination(gammaRad, c, [50, 50])[0] + 'vh';
+    const style = {
+      'top': choords[1] + 'vh',
+      'left': choords[0] + 'vh'
+    };
+
+    if (angle > 180) {
+      style['margin-left'] = '20px';
+    }
+
+    return style;
   }
 }

@@ -4,9 +4,9 @@
   position: absolute;
   width:100vh;
   height:100vh;
-  z-index: 100;
+  z-index: 20;
 }
-#caption-layer{
+#captions{
   top: 0px;
   left: 0px;
   position: absolute;
@@ -15,13 +15,13 @@
   z-index: 101;
 }
 
-.caption1{
+.caption-layer{
   top: 50vh;
   left: 50vh;
   position: absolute;
 }
 
-#proba {
+#vector-layer {
   position: absolute;
   top: 48.5vh;
   left:50vh;

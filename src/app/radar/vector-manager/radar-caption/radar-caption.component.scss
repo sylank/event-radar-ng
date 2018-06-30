@@ -1,4 +1,4 @@
-.caption{
+.caption-style{
   color: #ffffff;
   background: #000000;
    p{
@@ -8,17 +8,13 @@
    padding-right: 5px;
    padding-bottom: 2px;
    padding-top: 2px;
-   z-index: 250;
 
    margin-left: 20px;
    animation: 2s ease-out 0s 1 captionAnimation;
 
    white-space: nowrap;
    overflow: hidden;
-   z-index: 1000;
 }
-
-
 
 @keyframes captionAnimation {
   0% {

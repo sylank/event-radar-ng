@@ -17,7 +17,6 @@ $buttonContainerBackground: yellow;
 
     .material-icons {
       font-size: $buttonSize;
-
     }
 
     .walk-selector {
@@ -29,9 +28,4 @@ $buttonContainerBackground: yellow;
     .car-selector {
       color: $carColor;
     }
-  }
-
-  app-radar {
-    width: 100%;
-    height: 92vh;
   }

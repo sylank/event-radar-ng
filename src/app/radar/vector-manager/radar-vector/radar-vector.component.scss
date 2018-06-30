@@ -5,7 +5,6 @@
   overflow: visible;
   animation: 2s ease-out 0s 1 vectorFrame;
   background-color: inherit;
-  z-index: 200;
 }
 
 .vector-line {
@@ -16,7 +15,6 @@
 
   background-color: inherit;
   overflow: visible;
-  z-index: 200;
 }
 
 .vector-end {
@@ -28,7 +26,6 @@
   top: 0px;
 
   background-color: inherit;
-  z-index: 200;
 }
 
 @keyframes vectorFrame {

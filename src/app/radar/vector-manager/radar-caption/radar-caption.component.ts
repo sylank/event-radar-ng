@@ -14,4 +14,7 @@ export class RadarCaptionComponent implements OnInit {
   ngOnInit() {
   }
 
+  clickEvent() {
+    console.log('clicked');
+  }
 }

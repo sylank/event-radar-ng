@@ -5,23 +5,23 @@
   height:100vh;
 
   background: silver;
-  z-index: 50;
+  //z-index: 0;
+}
 
-  #background-layer {
-    position: absolute;
-    width:100vh;
-    height:100vh;
-    z-index: 50;
-  }
+#background-layer {
+  position: absolute;
+  width:100vh;
+  height:100vh;
+  //z-index: 49;
+}
 
-  #vector-manager {
-    top: 0px;
-    left: 0px;
-    position: absolute;
-    width:100vh;
-    height:100vh;
-    z-index: 50;
-  }
+#vector-manager {
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  width:100vh;
+  height:100vh;
+  //z-index: 50;
 }
 
 .closing {
