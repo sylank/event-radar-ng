@@ -4,8 +4,8 @@
 
     </app-radar-vector>
   </div>
-  <div id="captions" *ngFor="let data of dests">
-    <div class="caption-layer" [ngStyle]="generateStyle(data.angle, data.eventDistance)">
+  <div id="captions">
+    <div class="caption-layer" *ngFor="let data of dests" [ngStyle]="generateStyle(data.angle, data.eventDistance)">
       <app-radar-caption [caption]="data.eventName"></app-radar-caption>
     </div>
   </div>
