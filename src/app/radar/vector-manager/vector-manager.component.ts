@@ -57,11 +57,28 @@ export class VectorManagerComponent implements OnInit {
     return length + 'vh';
   }
 
-  getTopByCoords(gammaRad: number, c: number) {
-    return MathUtils.calculateDestination(gammaRad, c, [50, 50])[1] + 'vh';
+  getTopByCoords(gammaRad: number, c: number): number {
+    return MathUtils.calculateDestination(gammaRad, c, [50, 50])[1];
   }
 
-  getLeftByCoords(gammaRad: number, c: number) {
-    return MathUtils.calculateDestination(gammaRad, c, [50, 50])[0] + 'vh';
+  getLeftByCoords(gammaRad: number, c: number): number {
+    return MathUtils.calculateDestination(gammaRad, c, [50, 50])[0];
+  }
+
+  generateStyle(angle, distance): any {
+    const style = {
+      'top': this.getTopByCoords(angle, distance) + 'vh'
+    };
+
+    if (angle > 180) {
+      style['left'] = this.getLeftByCoords(angle, distance) + 'vh';
+      style['margin-left'] = '20px';
+    } else {
+      style['left'] = this.getLeftByCoords(angle, distance) + 'vh';
+    }
+
+    console.log(style);
+
+    return style;
   }
 }
