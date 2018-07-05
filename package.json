@@ -1,6 +1,6 @@
 {
-  "name": "ng-event-radar",
-  "version": "1.0.0",
+  "name": "event-radar-ng",
+  "version": "0.0.8",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -25,11 +25,11 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/sylank/ng-event-radar"
+    "url": "https://github.com/sylank/event-radar-ng"
   },
-  "homepage": "https://github.com/sylank/ng-event-radar",
+  "homepage": "https://github.com/sylank/event-radar-ng",
   "bugs": {
-    "url": "https://github.com/sylank/ng-event-radar/issues"
+    "url": "https://github.com/sylank/event-radar-ng/issues"
   },
   "dependencies": {
     "@angular/animations": "^5.2.0",

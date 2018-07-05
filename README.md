@@ -28,7 +28,59 @@ Install the EventRadar from npm repository:
 
 __Insert into your project__
 
-`npm i ng-event-radar`
+Insert the radar html tag into your project:
+`<app-event-radar> </app-event-radar>`
+
+In your app.module.ts insert the RadarAppModule at the import section:
+```
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+
+
+import { RadarAppModule } from '../../node_modules/event-radar-ng/src/app/app.module';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    RadarAppModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+```
+
+Create events.json in ./src/assets/event/events.json
+```
+[
+  {
+    "eventName": "Balatonboglár - BB napok",
+    "eventDistance": 8,
+    "description": "elso esemeny",
+    "angle": 120
+  },
+  {
+    "eventName": "Fenékpuszta - Római kori romok",
+    "eventDistance": 20,
+    "description": "elso esemeny",
+    "angle": 350
+  },
+  {
+    "eventName": "Kis-Balaton - Tüskevár",
+    "eventDistance": 45,
+    "description": "elso esemeny",
+    "angle": 280
+  }
+]
+
+```
+
 
 ## Customization
 
