@@ -20,17 +20,94 @@ You can find the component in NPM registry. You can easily download and re use i
 
 __Npm registry__
 
+Step inside your project dir:
+`cd <your_project_dir>`
+
+Install the EventRadar from npm repository:
+`npm i event-radar-ng`
+
 __Insert into your project__
+
+Insert the radar html tag into your project:
+`<app-event-radar> </app-event-radar>`
+
+In your app.module.ts insert the RadarAppModule at the import section:
+```
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+
+
+import { RadarAppModule } from '../../node_modules/event-radar-ng/src/app/app.module';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    RadarAppModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+```
+
+Create events.json in ./src/assets/event/events.json
+```
+[
+  {
+    "eventName": "Balatonboglár - BB napok",
+    "eventDistance": 8,
+    "description": "elso esemeny",
+    "angle": 120
+  },
+  {
+    "eventName": "Fenékpuszta - Római kori romok",
+    "eventDistance": 20,
+    "description": "elso esemeny",
+    "angle": 350
+  },
+  {
+    "eventName": "Kis-Balaton - Tüskevár",
+    "eventDistance": 45,
+    "description": "elso esemeny",
+    "angle": 280
+  }
+]
+
+```
+
 
 ## Customization
 
 You are able to customise data, diagram scale and colors as well.
 
-__Colors__
+Here you can find the CSS class names (please use the !important qualifier):
 
-__Diagram scale__
+__#radar-wrapper__: id name, the main background of the chart.
 
-__Data__
+__.closing__: class name, the final closing circle color. (the inner circle)
+
+__.outer__: class name, the circle line.
+
+__.inner__: class name, the element between the circle lines.
+
+__.container__: class name, outer and inner circle container.
+
+__.circle-text__: circle caption class.
+
+__.caption-style__: radar line caption class.
+
+
+## Known issues
+Please find the known issues at the issue page, you can find the major issues here.
+
+https://github.com/sylank/event-radar-ng/issues/35
+
 
 ## Fork
 
