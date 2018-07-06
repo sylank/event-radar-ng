@@ -1,6 +1,6 @@
 {
   "name": "event-radar-ng",
-  "version": "0.0.14",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
