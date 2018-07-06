@@ -89,12 +89,23 @@ You are able to customise data, diagram scale and colors as well.
 Here you can find the CSS class names (please use the !important qualifier):
 
 __#radar-wrapper__: id name, the main background of the chart.
+
 __.closing__: class name, the final closing circle color. (the inner circle)
+
 __.outer__: class name, the circle line.
+
 __.inner__: class name, the element between the circle lines.
+
 __.container__: class name, outer and inner circle container.
-__.circle-text__: circle caption class
+
+__.circle-text__: circle caption class.
+
 __.caption-style__: radar line caption class.
+
+
+## Known issues
+Please find the known issues at the issue page, you can find the major issues here.
+https://github.com/sylank/event-radar-ng/issues/35
 
 
 ## Fork
