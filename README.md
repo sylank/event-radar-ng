@@ -105,6 +105,7 @@ __.caption-style__: radar line caption class.
 
 ## Known issues
 Please find the known issues at the issue page, you can find the major issues here.
+
 https://github.com/sylank/event-radar-ng/issues/35
 
 
