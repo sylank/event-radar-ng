@@ -1,11 +1,13 @@
 @import "../../../main-variables";
 
 .caption-style{
+  margin: 0;
+  padding: 0;
   color: $captionTextColor;
   background: $captionTextBackground;
 
   p{
-  cursor: pointer;
+    cursor: pointer;
   }
 
   padding-left: 5px;

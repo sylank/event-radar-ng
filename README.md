@@ -24,7 +24,7 @@ Step inside your project dir:
 `cd <your_project_dir>`
 
 Install the EventRadar from npm repository:
-`npm i ng-event-radar`
+`npm i event-radar-ng`
 
 __Insert into your project__
 
@@ -86,11 +86,16 @@ Create events.json in ./src/assets/event/events.json
 
 You are able to customise data, diagram scale and colors as well.
 
-__Colors__
+Here you can find the CSS class names (please use the !important qualifier):
 
-__Diagram scale__
+__#radar-wrapper__: id name, the main background of the chart.
+__.closing__: class name, the final closing circle color. (the inner circle)
+__.outer__: class name, the circle line.
+__.inner__: class name, the element between the circle lines.
+__.container__: class name, outer and inner circle container.
+__.circle-text__: circle caption class
+__.caption-style__: radar line caption class.
 
-__Data__
 
 ## Fork
 
