@@ -10,7 +10,7 @@ defaults: &defaults
     - image: circleci/node:8.9.1
 
 jobs:
-  test:
+  build:
     <<: *defaults  
     steps:
       - checkout
@@ -51,7 +51,9 @@ workflows:
   version: 2
   test_deploy:
     jobs:
-      - test
+      - build:
+        type: approval
+        
       - deploy:
           requires:
-            - test
+            - build
