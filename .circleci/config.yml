@@ -51,8 +51,13 @@ workflows:
   version: 2
   test_deploy:
     jobs:
-      - build
+      - build:
+          branches:
+            only:
+             - master
       - deploy:
-          type: approval
+          branches:
+            only:
+             - master
           requires:
             - build
