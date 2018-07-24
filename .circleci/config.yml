@@ -51,7 +51,7 @@ workflows:
   version: 2
   test_deploy:
     jobs:
-      - build:
+      - build
       - deploy:
           type: approval
           requires:
