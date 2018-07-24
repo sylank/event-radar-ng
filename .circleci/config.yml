@@ -52,7 +52,7 @@ workflows:
   test_deploy:
     jobs:
       - build:
-        type: approval
       - deploy:
+          type: approval
           requires:
             - build
